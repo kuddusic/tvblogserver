@@ -4,15 +4,21 @@
  * Module dependencies.
  */
 
+
 var app = require('../app');
 var debug = require('debug')('expressapp:server');
 var http = require('http');
+debugger;
+const config = require('./config');
+
+
+console.log(`Listened on port:${config.port}`); 
 
 /**
  * Get port from environment and store in Express.
  */
-
-var port = normalizePort(process.env.PORT || '9980');
+debugger;
+var port = normalizePort(config.port);
 app.set('port', port);
 
 /**
