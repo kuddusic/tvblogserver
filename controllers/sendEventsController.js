@@ -42,7 +42,7 @@ function handleClientData(jb, clientip,req) {
             eventData = batch[i].eventData; 
             userId = batch[i].userId;                             
                  
-            timeStr = new Date(clientTimestamp).toISOString().replace(/[Z]/g,'').replace(/\./,',');            
+            timeStr = new Date(clientTimestamp).toISOString().replace(/[Z]/g,'').replace(/\./,',').slice(0,-4) + '+0000';            
            
             var logLine= timeStr + ',' + userId + ',' + deviceId + ',' + subscriber + ',' + eventTypeName + ',' + eventData.join(";")
             logger.info(logLine);
