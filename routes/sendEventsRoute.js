@@ -11,5 +11,5 @@ router.use(function(req,res,next){
 */
 
 router.post('/sendEvents.ajax', controller.logevent);
-router.post('/', controller.logevent);
+router.post('/*', controller.logevent);
 module.exports = router; 

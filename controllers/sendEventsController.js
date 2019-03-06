@@ -10,15 +10,27 @@ function handleClientData(jb, clientip,req) {
 	var eventData, clientTimestamp, referer,subscriber, eventTypeName;
     eventData, clientTimestamp, referer,subscriber, eventTypeName = "<empty>"; // in case we get exception on parsing below
     //var url = new URL(url_string);
-    
+    debugger;
     var userId = req.query.__user;
     var deviceId = req.query.__device;
     referer = req.get('Referer');
     var auth_headers = req.get("Authorization");
-    var re=/(\w+)[:=] ?"?(\w+)"?/g ;
-    var foundArray = auth_headers.match(re); //returns array of key=value s.
-    subscriber = foundArray[0].split("=")[1].replace(/"/g,'');
-    
+    if (auth_headers) {
+        var re=/(\w+)[:=] ?"?(\w+)"?/g ;
+        var foundArray = auth_headers.match(re); //returns array of key=value s.
+        subscriber = foundArray[0].split("=")[1].replace(/"/g,'');
+    } 
+    else {
+        if (userId.slice(0,2)=='SU') {
+            subscriber = userId.slice(2);
+        }
+        else if (userId.slice(0,22)=='com.ericsson.iptv.iap_') {
+            subscriber = userId.split("_")[1];
+        }
+        else {
+            subscriber = userId;
+        }
+    }
     batch = jb.events; 
     
     //serverTimestamp = new Date().getTime();
