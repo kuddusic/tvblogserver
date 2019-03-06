@@ -90,7 +90,7 @@ batchloggerTransport.on('rotate', function(oldFilename, newFilename) {
 });
 var sendEventsTransport = new myRotateFile({
   name: 'sendEventsTransport',
-  filename : path.join(`${logpath}`, 'iapmonitorlogs','ipmonitorlog.' + hostname),    
+  filename : path.join(`${logpath}`, 'iapmonitorlogs','iap-monitor-ptrknb-' + hostname),    
   datePattern : 'YYYYMMDD.HHmm',
   frequency : "15m",    
   json: false,
