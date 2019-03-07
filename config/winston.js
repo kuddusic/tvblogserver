@@ -90,8 +90,8 @@ batchloggerTransport.on('rotate', function(oldFilename, newFilename) {
 });
 var sendEventsTransport = new myRotateFile({
   name: 'sendEventsTransport',
-  filename : path.join(`${logpath}`, 'iapmonitorlogs','iap-monitor-ptrknb-mmp-msm' + hostname.slice(-2)),
-  datePattern : 'YYYYMMDD_HHmm',
+  filename : path.join(`${logpath}`, 'iapmonitorlogs','iap-monitor-ptrknb-mmp-msm' + hostname.slice(-2))+'-15.log',
+  datePattern : 'YYYYMMDDHHmm',
   frequency : "15m",    
   json: false,
   colorize: false,
@@ -101,7 +101,7 @@ var sendEventsTransport = new myRotateFile({
 sendEventsTransport.on('rotate', function(oldFilename, newFilename) {
   if (fs.existsSync(oldFilename)) {
     console.log("Renaming file " + oldFilename);
-    fs.rename(oldFilename, oldFilename + '00.log', function(err) {
+    fs.rename(oldFilename, oldFilename + '00', function(err) {
       if ( err ) console.error('ERROR: ' + err);
     });
   }
