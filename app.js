@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/stb-bootlogger',stbloggerRouter);
-app.use('/batchlog',batchloggerRouter);
+app.use('/bl',batchloggerRouter);
 app.use('/el',sendEventsRouter);
 app.use('/rr',ratingRouter);
 

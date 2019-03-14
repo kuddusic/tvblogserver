@@ -28,18 +28,18 @@ function handleClientData(jb, clientip,req) {
     }
     else {
         if (userId.length>1) {
-            if (userId.substr(0,2)=="SU") {
-                subscriber = userId.substr(2);
+            if (userId.slice(0,2)=='SU') {
+                subscriber = userId.slice(2);
             }
-            else if (userId.substr(0,21)=="com.ericsson.iptv.iap") {
+            else if (userId.slice(0,22)=='com.ericsson.iptv.iap_') {
                 subscriber = userId.split("_")[1];
             }
             else {
-                subscriber = userId.substr(2);
+                subscriber = userId;
             }
         }
         else {
-            subscriber = "";
+            subscriber=""
         }
     }
     
