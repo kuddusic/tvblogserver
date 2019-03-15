@@ -10,6 +10,6 @@ router.use(function(req,res,next){
 });
 */
 
-router.post('/logevent', controller.logevent);
+router.post('/logevent', express.json(), controller.logevent);
 
 module.exports = router; 

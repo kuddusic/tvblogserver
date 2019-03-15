@@ -10,6 +10,6 @@ router.use(function(req,res,next){
 });
 */
 
-router.post('/*', controller.logevent);
+router.post('/*', express.json({limit: '50kb'}),controller.logevent);
 
 module.exports = router; 

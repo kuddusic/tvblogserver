@@ -10,6 +10,6 @@ router.use(function(req,res,next){
 });
 */
 
-router.post('/sendEvents.ajax', controller.logevent);
-router.post('/*', controller.logevent);
+router.post('/sendEvents.ajax', express.json(), controller.logevent);
+router.post('/*', express.json(), controller.logevent);
 module.exports = router; 
