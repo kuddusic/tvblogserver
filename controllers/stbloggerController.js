@@ -1,4 +1,4 @@
-const MAX_BODY_LENGTH = 1000;
+const MAX_BODY_LENGTH = 5000;
 const {loggers} = require('winston');
 	
 const logger = loggers.get('stblogger');
