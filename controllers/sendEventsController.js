@@ -1,4 +1,3 @@
-
 const MAX_BODY_LENGTH = 5000;
 const {loggers} = require('winston');
 	
@@ -95,7 +94,7 @@ module.exports.logevent = function(req,resp){
         try {                  
             
             
-            //params = decodeURLParams(req.url);
+            //params = decodeURLParams(req.url); 
             if (body.events && req.query.__device && req.query.__user) {
                 sendDefaultResponse();
                 handleClientData(body, clientIpAddress, req);
