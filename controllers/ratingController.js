@@ -1,13 +1,13 @@
-const MAX_BODY_LENGTH = 5000;
+const MAX_BODY_LENGTH = 50000;
 const {loggers} = require('winston');
 	
 const logger = loggers.get('ratinglogger');
 
 function handleClientData(clientip,req) {
      //serverTimestamp = new Date().getTime();
-    
+    debugger;
 	try {
-        var outputString = 'POST ' + req.originalUrl+ ';' + JSON.stringify(req.body);
+        var outputString = 'POST ' + req.originalUrl+ ';' + req.body;
         debugger;
         logger.info(outputString);
     } catch (e) {
