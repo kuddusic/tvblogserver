@@ -27,7 +27,7 @@ morgan.token('remote-addr', function (req, res) {
 });
 
 app.disable('x-powered-by'); // remove X-Powered-By headers.
-app.use(express.json());
+//app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 //app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
