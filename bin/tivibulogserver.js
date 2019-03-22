@@ -11,7 +11,7 @@ var http = require('http');
 debugger;
 const config = require('./config');
 
-
+console.log(`NODE_ENV:${process.env.NODE_ENV}`)
 console.log(`Listened on port:${config.port}`); 
 
 /**
