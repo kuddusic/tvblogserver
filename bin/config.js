@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 debugger;
-const result = dotenv.config();
+const result = dotenv.config( {path: '/opt/tivibulogserver/'} );
 if (result.error) {
     throw result.error;
 }  
